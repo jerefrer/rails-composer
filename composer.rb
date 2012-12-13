@@ -699,6 +699,7 @@ if prefer :bootstrap, 'less'
   gem 'less-rails', '>= 2.2.6', :group => :assets
   gem 'twitter-bootstrap-rails', '>= 2.1.7', :group => :assets
   # install gem 'therubyracer' to use Less
+  gem 'libv8', '~> 3.11.8'
   gem 'therubyracer', '>= 0.11.0', :group => :assets, :platform => :ruby
 end
 
@@ -1926,6 +1927,7 @@ case RbConfig::CONFIG['host_os']
       # was it already added for bootstrap-less?
       unless prefer :bootstrap, 'less'
         say_wizard "recipe adding 'therubyracer' JavaScript runtime gem"
+        gem 'libv8', '~> 3.11.8'
         gem 'therubyracer', '>= 0.11.0', :group => :assets, :platform => :ruby
       end
     end
